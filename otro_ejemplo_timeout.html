@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Asincronia</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button.cancel {
+            background-color: #f44336;
+        }
+
+        button.cancel:hover {
+            background-color: #d83532;
+        }
+    </style>
+
+    <script>
+        let timeoutID;
+
+        function showAlert() {
+            timeoutID = setTimeout(alert, 2000, 'Se ha ejecutado el timeout');
+        }
+
+        function clearAlert() {
+            clearTimeout(timeoutID);
+            console.log("Se ha cancelado el timeout");
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <p>Demo de setTimeout en JavaScript</p>
+        <button onclick="showAlert();">Show</button>
+        <button class="cancel" onclick="clearAlert();">Cancel</button>
+    </div>
+
+</body>
+
+</html>
